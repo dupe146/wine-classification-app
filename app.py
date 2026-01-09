@@ -267,20 +267,23 @@ def not_found(e):
 def internal_error(e):
     return jsonify({'error': 'Internal server error'}), 500
 
-
 if __name__ == '__main__':
     # For local development
+    import os
+    port = int(os.environ.get('PORT', 5008)) 
+    
     print("\n" + "=" * 60)
     print("🍷 Wine Classification API Starting...")
     print("=" * 60)
     print(f"\nModel Type: {MODEL_TYPE.upper()}")
     print(f"Model Status: {'Loaded ✓' if model else 'Not Loaded ✗'}")
+    print(f"\nPort: {port}")
     print("\nEndpoints:")
-    print("  - http://localhost:5008/")
-    print("  - http://localhost:5008/predict")
-    print("  - http://localhost:5008/health")
-    print("  - http://localhost:5008/api/info")
-    print("  - http://localhost:5008/api/example")
+    print(f"  - http://localhost:{port}/")
+    print(f"  - http://localhost:{port}/predict")
+    print(f"  - http://localhost:{port}/health")
+    print(f"  - http://localhost:{port}/api/info")
+    print(f"  - http://localhost:{port}/api/example")
     print("\n" + "=" * 60 + "\n")
     
-    app.run(debug=True, host='0.0.0.0', port=5008)
+    app.run(debug=True, host='0.0.0.0', port=port)
