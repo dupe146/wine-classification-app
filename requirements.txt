@@ -1,0 +1,13 @@
+# PyTorch (CPU version for deployment)
+torch==2.1.0
+torchvision==0.16.0
+
+# Flask web framework
+Flask==3.0.0
+gunicorn==21.2.0
+
+# Data processing
+numpy==1.24.3
+
+# CORS support (optional, for API access from different domains)
+flask-cors==4.0.0
