@@ -3,4 +3,4 @@
 AI-powered wine cultivar prediction system.
 
 ## Deployment
-Deployed on Render: 
+Deployed on Render: https://wine-classifier-ilje.onrender.com/
